@@ -1,4 +1,4 @@
-package com.example.redpen;
+package SchoolTests;
 
 import android.content.Context;
 

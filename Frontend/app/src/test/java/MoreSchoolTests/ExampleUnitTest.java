@@ -1,4 +1,4 @@
-package com.example.redpen;
+package MoreSchoolTests;
 
 import org.junit.Test;
 
