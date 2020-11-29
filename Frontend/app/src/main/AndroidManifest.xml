@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="SchoolSystem.BaseScreen"
+            android:name="BaseScreen"
             android:label= "Base Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="SchoolSystem.StudentLogin"
+            android:name="StudentLogin"
             android:label="Student Login"/>
         <activity
-            android:name="SchoolSystem.StudentHome"
+            android:name="StudentHome"
             android:label="Student Home"/>
 
 

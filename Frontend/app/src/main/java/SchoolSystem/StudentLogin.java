@@ -16,7 +16,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-
 import org.json.JSONObject;
 
 import SchoolSystem.R;
@@ -53,7 +52,7 @@ public class StudentLogin extends AppCompatActivity {
     }
 
     private void jsonParse(final String u, final String p) {
-        String loginURL = "http://coms-309-ug-05.cs.iastate.edu:8080/login-student";
+        String loginURL = "http://10.0.2.2:8080/login-student";
 
         JSONObject object = new JSONObject();
         try {
