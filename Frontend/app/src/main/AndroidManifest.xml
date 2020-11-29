@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.redpen">
+    package="School.System">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -32,20 +32,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TeacherLogin"
-            android:label="Teacher Login"/>
-        <activity
-            android:name=".ParentLogin"
-            android:label="Parent Login"/>
-        <activity
             android:name=".StudentLogin"
             android:label="Student Login"/>
-        <activity
-            android:name=".TeacherHome"
-            android:label="Teacher Home"/>
-        <activity
-            android:name=".ParentHome"
-            android:label="Parent Home"/>
         <activity
             android:name=".StudentHome"
             android:label="Student Home"/>
