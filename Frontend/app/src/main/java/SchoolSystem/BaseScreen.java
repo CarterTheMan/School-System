@@ -1,4 +1,4 @@
-package School.System;
+package SchoolSystem;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
-import School.System.R;
-import School.System.StudentLogin;
+
+import SchoolSystem.R;
 
 public class BaseScreen extends AppCompatActivity {
 

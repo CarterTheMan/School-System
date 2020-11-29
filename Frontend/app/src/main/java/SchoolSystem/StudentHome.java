@@ -1,10 +1,10 @@
-package School.System;
+package SchoolSystem;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import School.System.R;
+import SchoolSystem.R;
 
 public class StudentHome extends AppCompatActivity {
 
