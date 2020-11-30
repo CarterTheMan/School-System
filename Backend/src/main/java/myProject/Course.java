@@ -11,39 +11,39 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @Entity
-@Table(name = "student")
-public class Student {
+@Table(name = "course")
+public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	
 	@Column 
-	String name;
+	String title;
 	
 	@Column 
-	String password;
+	String description;
 	
-	@OneToMany(mappedBy = "student")
-	Set<StudentCourse> studentCourses;
+	@OneToMany(mappedBy = "course") 
+	Set<TeacherCourse> teacherCourses;
 	
-	public Student() {}
+	public Course() {}
 	
-	public Student(String name, String password) {
-		this.name = name;
-		this.password = password;
+	public Course(String title, String description) {
+		this.title = title;
+		this.description = description;
 	}
 	
 	public Integer getId() {
 		return id;
 	}
 	
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 	
-	public String getPassword() {
-		return password;
+	public String getDescription() {
+		return description;
 	}
 	
 }
