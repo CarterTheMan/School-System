@@ -27,6 +27,14 @@ public class BaseScreen extends AppCompatActivity {
                 startActivity(goStudent);
             }
         });
+
+        Button tLogin = (Button) findViewById(R.id.TeacherLog);
+        tLogin.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                Intent goTeacher = new Intent(getApplicationContext(), TeacherLogin.class);
+                startActivity(goTeacher);
+            }
+        });
     }
 
 }

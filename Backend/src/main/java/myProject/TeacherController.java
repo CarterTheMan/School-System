@@ -33,7 +33,7 @@ public class TeacherController {
 				}
 			}
 		}
-		return "There are no students with the name " + t.getName();
+		return "There are no teachers with the name " + t.getName();
 	}
 	
 	//This returns a list of all the students
