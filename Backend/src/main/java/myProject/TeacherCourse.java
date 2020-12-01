@@ -29,6 +29,9 @@ public class TeacherCourse {
 	@OneToMany(mappedBy = "teacherCourse")
 	Set<StudentCourse> studentCourses;
 	
+	@OneToMany(mappedBy = "teacherCourse")
+	Set<CourseAssignment> courseAssignments;
+	
 	public TeacherCourse() {}
 	
 	public TeacherCourse(Teacher t, Course c) {
