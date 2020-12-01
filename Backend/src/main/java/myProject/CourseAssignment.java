@@ -28,6 +28,9 @@ public class CourseAssignment {
     @JoinColumn(name = "teacher_course_id", nullable = false)
     TeacherCourse teacherCourse;
 	
+	@OneToMany(mappedBy = "courseAssignment")
+	Set<StudentAssignment> studentAssignments;
+	
 	public CourseAssignment() {}
 	
 	public CourseAssignment(TeacherCourse tc, String title, String description) {

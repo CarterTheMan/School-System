@@ -27,6 +27,9 @@ public class Student {
 	@OneToMany(mappedBy = "student")
 	Set<StudentCourse> studentCourses;
 	
+	@OneToMany(mappedBy = "student")
+	Set<StudentAssignment> StudentAssignments;
+	
 	public Student() {}
 	
 	public Student(String name, String password) {
