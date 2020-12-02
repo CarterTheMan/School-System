@@ -6,14 +6,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Nested Scroll view -->
+    <!-- https://www.geeksforgeeks.org/nestedscrollview-in-android-with-example/ -->
+    <!-- android:background="@android:color/darker_gray" -->
+
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/student_logged_in"
+        android:text="Classes"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Linear layout to contain 2 text view and button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/classInfo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 1"/>
+
+            <Button
+                android:id="@+id/class1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 2"/>
+
+            <Button
+                android:id="@+id/class2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 3"/>
+
+            <Button
+                android:id="@+id/class3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 4"/>
+
+            <Button
+                android:id="@+id/class4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 5"/>
+
+            <Button
+                android:id="@+id/class5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 6"/>
+
+            <Button
+                android:id="@+id/class6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 7"/>
+
+            <Button
+                android:id="@+id/class7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <TextView
+                android:id="@+id/classInfo8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Class info 8"/>
+
+            <Button
+                android:id="@+id/class8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    \
 </androidx.constraintlayout.widget.ConstraintLayout>
