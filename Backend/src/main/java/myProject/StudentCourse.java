@@ -1,5 +1,7 @@
 package myProject;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 import org.springframework.boot.SpringApplication;
@@ -23,6 +25,9 @@ public class StudentCourse {
 	@ManyToOne
     @JoinColumn(name = "teacher_course_id", nullable = false)
     TeacherCourse teacherCourse;
+	
+	@OneToMany(mappedBy = "studentCourse")
+	Set<StudentAssignment> StudentAssignments;
 	
 	public StudentCourse() {}
 	

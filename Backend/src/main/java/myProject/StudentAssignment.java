@@ -19,8 +19,8 @@ public class StudentAssignment {
 	Integer id;
 	
 	@ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
-    Student student;
+    @JoinColumn(name = "student_course_id", nullable = false)
+    StudentCourse studentCourse;
 	
 	@ManyToOne
     @JoinColumn(name = "course_assignment_id", nullable = false)
@@ -34,8 +34,8 @@ public class StudentAssignment {
 	
 	public StudentAssignment() {}
 	
-	public StudentAssignment(Student s, CourseAssignment ca, Integer grade, String feedback) {
-		this.student = s;
+	public StudentAssignment(StudentCourse s, CourseAssignment ca, Integer grade, String feedback) {
+		this.studentCourse = s;
 		this.courseAssignment = ca;
 		this.grade = grade;
 		this.feedback = feedback;
@@ -45,8 +45,8 @@ public class StudentAssignment {
 		return id;
 	}
 	
-	public Student getStudent() {
-		return student;
+	public StudentCourse getStudentCourse() {
+		return studentCourse;
 	}
 	
 	public CourseAssignment getCourseAssignment() {

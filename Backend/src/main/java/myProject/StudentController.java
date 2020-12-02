@@ -47,4 +47,33 @@ public class StudentController {
 	Student getStudent(@PathVariable Integer id) {
 		return students.findOne(id);
 	}
+	
+	@Autowired
+	StudentCourseRepository studentCourses;
+	
+	//Gets all courses of an individual student
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/courses")
+	List<StudentCourse> getStudentsStudentCourses(@PathVariable Integer id) {
+		List<StudentCourse> returned = new ArrayList<StudentCourse>();
+		List<StudentCourse> list = studentCourses.findAll();
+		for (StudentCourse stu : list) {
+			if (stu.student.id == id) {
+				returned.add(stu);
+			}
+		}
+		return returned;
+	}
+	
+	//Gets a specific course of an individual student
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/course/{sid}")
+	StudentCourse getStudentsStudentCouse(@PathVariable Integer id, @PathVariable Integer sid) {
+		List<StudentCourse> list = studentCourses.findAll();
+		for (StudentCourse stu : list) {
+			if (stu.student.id == id && stu.id == sid) {
+				return stu;
+			}
+		}
+		return null;
+	}
+	
 }
