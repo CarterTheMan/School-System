@@ -51,18 +51,6 @@ public class StudentHome extends AppCompatActivity {
     private Button class_7;
     private Button class_8;
 
-    //Sets the student course id
-    /*
-    private int class_1_id = 0;
-    private int class_2_id = 0;
-    private int class_3_id = 0;
-    private int class_4_id = 0;
-    private int class_5_id = 0;
-    private int class_6_id = 0;
-    private int class_7_id = 0;
-    private int class_8_id = 0;
-     */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,8 +83,6 @@ public class StudentHome extends AppCompatActivity {
 
         //Sets up all the buttons so that it shows the classes
         setUp();
-
-        id = id;
 
         class_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,38 +153,17 @@ public class StudentHome extends AppCompatActivity {
 
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
-                            //Gets the individual teacherCourse
+                        //Gets the individual teacherCourse
                         JSONObject teacherCourse = jsonObject.getJSONObject("teacherCourse");
-                            //Gets the id and course from the teacherCourse
-                        int class_id = teacherCourse.getInt("id");
+                        //Gets the course from the teacherCourse
                         JSONObject course = teacherCourse.getJSONObject("course");
-                            //Gets the name of the course from the course
+                        //Gets the name of the course from the course
                         String courseTitle = course.getString("title");
 
                         //Sets the text view for the class and changes the wording on it to match
                         //the title of the class
                         TextView textViewClass = getTextView(i);
                         textViewClass.setText(courseTitle);
-
-                        /*
-                        if (i == 0) {
-                            class_1_id = class_id;
-                        } else if (i == 1) {
-                            class_2_id = class_id;
-                        } else if (i == 2) {
-                            class_3_id = class_id;
-                        } else if (i == 3) {
-                            class_4_id = class_id;
-                        } else if (i == 4) {
-                            class_5_id = class_id;
-                        } else if (i == 5) {
-                            class_6_id = class_id;
-                        } else if (i == 6) {
-                            class_7_id = class_id;
-                        } else if (i == 7) {
-                            class_8_id = class_id;
-                        }
-                         */
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -234,10 +199,8 @@ public class StudentHome extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = response.getJSONObject(classId);
-                    //Gets the individual teacherCourse
-                    JSONObject teacherCourse = jsonObject.getJSONObject("teacherCourse");
-                    //Gets the id and course from the teacherCourse
-                    int class_id = teacherCourse.getInt("id");
+                    //Gets the id from the studentCourse
+                    int class_id = jsonObject.getInt("id");
 
                     //Goes to that individual class
                     Intent cont = new Intent(getApplicationContext(), StudentClass.class);
