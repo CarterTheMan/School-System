@@ -14,8 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -54,6 +52,7 @@ public class StudentHome extends AppCompatActivity {
     private Button class_8;
 
     //Sets the student course id
+    /*
     private int class_1_id = 0;
     private int class_2_id = 0;
     private int class_3_id = 0;
@@ -62,6 +61,7 @@ public class StudentHome extends AppCompatActivity {
     private int class_6_id = 0;
     private int class_7_id = 0;
     private int class_8_id = 0;
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,63 @@ public class StudentHome extends AppCompatActivity {
         //Sets up all the buttons so that it shows the classes
         setUp();
 
+        id = id;
 
+        class_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(0);
+            }
+        });
+
+        class_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(1);
+            }
+        });
+
+        class_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(2);
+            }
+        });
+
+        class_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(3);
+            }
+        });
+
+        class_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(4);
+            }
+        });
+
+        class_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(5);
+            }
+        });
+
+        class_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(6);
+            }
+        });
+
+        class_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToClass(7);
+            }
+        });
 
     }
 
@@ -124,6 +180,7 @@ public class StudentHome extends AppCompatActivity {
                         TextView textViewClass = getTextView(i);
                         textViewClass.setText(courseTitle);
 
+                        /*
                         if (i == 0) {
                             class_1_id = class_id;
                         } else if (i == 1) {
@@ -141,6 +198,8 @@ public class StudentHome extends AppCompatActivity {
                         } else if (i == 7) {
                             class_8_id = class_id;
                         }
+                         */
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -152,6 +211,42 @@ public class StudentHome extends AppCompatActivity {
                     Button temp2 = getButton(i);
                     temp1.setVisibility(View.GONE);
                     temp2.setVisibility(View.GONE);
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        q.add(jsonArrayRequest);
+
+    }
+
+    private void goToClass(final int classId) {
+        String url = "http://10.0.2.2:8080/student/" + id + "/courses";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                try {
+                    JSONObject jsonObject = response.getJSONObject(classId);
+                    //Gets the individual teacherCourse
+                    JSONObject teacherCourse = jsonObject.getJSONObject("teacherCourse");
+                    //Gets the id and course from the teacherCourse
+                    int class_id = teacherCourse.getInt("id");
+
+                    //Goes to that individual class
+                    Intent cont = new Intent(getApplicationContext(), StudentClass.class);
+                    cont.putExtra("id", id);
+                    cont.putExtra("classId", class_id);
+                    startActivity(cont);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
             }

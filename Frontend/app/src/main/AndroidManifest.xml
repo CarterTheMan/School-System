@@ -28,6 +28,9 @@
             android:name="StudentHome"
             android:label="Student Home"/>
         <activity
+            android:name="StudentClass"
+            android:label="Student Class"/>
+        <activity
             android:name="TeacherLogin"
             android:label="Teacher Login"/>
         <activity
