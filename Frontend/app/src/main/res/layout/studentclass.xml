@@ -14,6 +14,409 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/studentClassGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class Grade Here"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15000002" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Linear layout to contain 2 text view and button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentInfo10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignment info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassAssignmentGrade10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/studentClassAssignment10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here to see more info" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assignments"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.250000024" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

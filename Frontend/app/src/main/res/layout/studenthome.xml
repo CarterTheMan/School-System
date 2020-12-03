@@ -38,12 +38,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass1"
@@ -51,12 +55,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass2"
@@ -64,12 +72,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass3"
@@ -77,12 +89,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass4"
@@ -90,12 +106,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass5"
@@ -103,12 +123,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass6"
@@ -116,12 +140,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass7"
@@ -129,12 +157,16 @@
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:id="@+id/studentClassInfo8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Class info"/>
+                android:text="Class info"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
                 android:id="@+id/studentClass8"
@@ -146,5 +178,4 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    \
 </androidx.constraintlayout.widget.ConstraintLayout>
