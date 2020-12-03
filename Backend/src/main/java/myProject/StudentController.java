@@ -116,7 +116,7 @@ public class StudentController {
 		}
 		return returned;
 	}
-	
+	 
 	//Gets an individual assignment for an individual course
 	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/course/{sid}/assignment/{aid}")
 	StudentAssignment getStudentCourseAssignment(@PathVariable Integer id, @PathVariable Integer sid, @PathVariable Integer aid) {
