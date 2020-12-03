@@ -31,7 +31,6 @@ import SchoolSystem.R;
 public class StudentHome extends AppCompatActivity {
 
     private RequestQueue q;
-    private int len = 0;
     private int id = 0;
 
     //Sets all the class info parts
@@ -94,13 +93,10 @@ public class StudentHome extends AppCompatActivity {
         //Sets the id of the student
         id = Integer.parseInt(getIntent().getExtras().get("id").toString());
 
+        //Sets up all the buttons so that it shows the classes
         setUp();
 
-        for (int i = len; i < 8; i++) {
-            TextView temp1 = getTextView(i);
-            Button temp2 = getButton(i);
 
-        }
 
     }
 
@@ -111,7 +107,7 @@ public class StudentHome extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                for(int i = 0; i < response.length(); i++){
+                for(int i = 0; i < response.length(); i++) {
 
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
@@ -148,9 +144,14 @@ public class StudentHome extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                }
 
-                    len++;
-
+                //Makes all the extra buttons and text views disappear
+                for (int i = response.length(); i < 8; i++) {
+                    TextView temp1 = getTextView(i);
+                    Button temp2 = getButton(i);
+                    temp1.setVisibility(View.GONE);
+                    temp2.setVisibility(View.GONE);
                 }
 
             }
