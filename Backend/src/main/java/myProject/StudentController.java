@@ -76,4 +76,58 @@ public class StudentController {
 		return null;
 	}
 	
+	@Autowired
+	StudentAssignmentRepository studentAssignments;
+	
+	//Gets all assignments for a student
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/assignments")
+	List<StudentAssignment> getStudentAssignments(@PathVariable Integer id) {
+		List<StudentAssignment> returned = new ArrayList<StudentAssignment>();
+		List<StudentAssignment> list = studentAssignments.findAll();
+		for (StudentAssignment stu : list) {
+			if (stu.studentCourse.student.id == id) {
+				returned.add(stu);
+			}
+		}
+		return returned;
+	}
+	
+	//Gets all assignments for a student
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/assignment/{aid}")
+	StudentAssignment getStudentAssignment(@PathVariable Integer id, @PathVariable Integer aid) {
+		List<StudentAssignment> list = studentAssignments.findAll();
+		for (StudentAssignment stu : list) {
+			if (stu.studentCourse.student.id == id && stu.id == aid) {
+				return stu;
+			}
+		}
+		return null;
+	}
+	
+	//Gets all assignments for an individual course
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/course/{sid}/assignments")
+	List<StudentAssignment> getStudentCourseAssignments(@PathVariable Integer id, @PathVariable Integer sid) {
+		List<StudentAssignment> returned = new ArrayList<StudentAssignment>();
+		List<StudentAssignment> list = studentAssignments.findAll();
+		for (StudentAssignment stu : list) {
+			if (stu.studentCourse.student.id == id && stu.studentCourse.id == sid) {
+				returned.add(stu);
+			}
+		}
+		return returned;
+	}
+	
+	//Gets an individual assignment for an individual course
+	@RequestMapping(method = RequestMethod.GET, path = "/student/{id}/course/{sid}/assignment/{aid}")
+	StudentAssignment getStudentCourseAssignment(@PathVariable Integer id, @PathVariable Integer sid, @PathVariable Integer aid) {
+		List<StudentAssignment> list = studentAssignments.findAll();
+		for (StudentAssignment stu : list) {
+			if (stu.studentCourse.student.id == id && stu.studentCourse.id == sid && stu.id == aid) {
+				return stu;
+			}
+		}
+		return null;
+	}
+	
+	
 }
