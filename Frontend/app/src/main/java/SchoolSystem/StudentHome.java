@@ -4,19 +4,213 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.Request;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import SchoolSystem.R;
 
 public class StudentHome extends AppCompatActivity {
+
+    private RequestQueue q;
+    private int len = 0;
+    private int id = 0;
+
+    //Sets all the class info parts
+    private TextView classInfo_1;
+    private TextView classInfo_2;
+    private TextView classInfo_3;
+    private TextView classInfo_4;
+    private TextView classInfo_5;
+    private TextView classInfo_6;
+    private TextView classInfo_7;
+    private TextView classInfo_8;
+
+    //Sets the buttons of all the classes
+    private Button class_1;
+    private Button class_2;
+    private Button class_3;
+    private Button class_4;
+    private Button class_5;
+    private Button class_6;
+    private Button class_7;
+    private Button class_8;
+
+    //Sets the student course id
+    private int class_1_id = 0;
+    private int class_2_id = 0;
+    private int class_3_id = 0;
+    private int class_4_id = 0;
+    private int class_5_id = 0;
+    private int class_6_id = 0;
+    private int class_7_id = 0;
+    private int class_8_id = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.studenthome);
 
+        q = Volley.newRequestQueue(this);
 
+        //Sets all of the class info parts for the scroll of the page
+        classInfo_1 = (TextView) findViewById(R.id.studentClassInfo1);
+        classInfo_2 = (TextView) findViewById(R.id.studentClassInfo2);
+        classInfo_3 = (TextView) findViewById(R.id.studentClassInfo3);
+        classInfo_4 = (TextView) findViewById(R.id.studentClassInfo4);
+        classInfo_5 = (TextView) findViewById(R.id.studentClassInfo5);
+        classInfo_6 = (TextView) findViewById(R.id.studentClassInfo6);
+        classInfo_7 = (TextView) findViewById(R.id.studentClassInfo7);
+        classInfo_8 = (TextView) findViewById(R.id.studentClassInfo8);
 
+        //Sets all of the class parts for the scroll of the page
+        class_1 = (Button) findViewById(R.id.studentClass1);
+        class_2 = (Button) findViewById(R.id.studentClass2);
+        class_3 = (Button) findViewById(R.id.studentClass3);
+        class_4 = (Button) findViewById(R.id.studentClass4);
+        class_5 = (Button) findViewById(R.id.studentClass5);
+        class_6 = (Button) findViewById(R.id.studentClass6);
+        class_7 = (Button) findViewById(R.id.studentClass7);
+        class_8 = (Button) findViewById(R.id.studentClass8);
+
+        //Sets the id of the student
+        id = Integer.parseInt(getIntent().getExtras().get("id").toString());
+
+        setUp();
+
+        for (int i = len; i < 8; i++) {
+            TextView temp1 = getTextView(i);
+            Button temp2 = getButton(i);
+
+        }
 
     }
+
+    private void setUp() {
+        String url = "http://10.0.2.2:8080/student/" + id + "/courses";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for(int i = 0; i < response.length(); i++){
+
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                            //Gets the individual teacherCourse
+                        JSONObject teacherCourse = jsonObject.getJSONObject("teacherCourse");
+                            //Gets the id and course from the teacherCourse
+                        int class_id = teacherCourse.getInt("id");
+                        JSONObject course = teacherCourse.getJSONObject("course");
+                            //Gets the name of the course from the course
+                        String courseTitle = course.getString("title");
+
+                        //Sets the text view for the class and changes the wording on it to match
+                        //the title of the class
+                        TextView textViewClass = getTextView(i);
+                        textViewClass.setText(courseTitle);
+
+                        if (i == 0) {
+                            class_1_id = class_id;
+                        } else if (i == 1) {
+                            class_2_id = class_id;
+                        } else if (i == 2) {
+                            class_3_id = class_id;
+                        } else if (i == 3) {
+                            class_4_id = class_id;
+                        } else if (i == 4) {
+                            class_5_id = class_id;
+                        } else if (i == 5) {
+                            class_6_id = class_id;
+                        } else if (i == 6) {
+                            class_7_id = class_id;
+                        } else if (i == 7) {
+                            class_8_id = class_id;
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    len++;
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        q.add(jsonArrayRequest);
+
+    }
+
+    private TextView getTextView(int i) {
+        if (i == 0) {
+            return classInfo_1;
+        } else if (i == 1) {
+            return classInfo_2;
+        } else if (i == 2) {
+            return classInfo_3;
+        } else if (i == 3) {
+            return classInfo_4;
+        } else if (i == 4) {
+            return classInfo_5;
+        } else if (i == 5) {
+            return classInfo_6;
+        } else if (i == 6) {
+            return classInfo_7;
+        } else if (i == 7) {
+            return classInfo_8;
+        } else {
+            return null;
+        }
+    }
+
+    private Button getButton(int i) {
+        if (i == 0) {
+            return class_1;
+        } else if (i == 1) {
+            return class_2;
+        } else if (i == 2) {
+            return class_3;
+        } else if (i == 3) {
+            return class_4;
+        } else if (i == 4) {
+            return class_5;
+        } else if (i == 5) {
+            return class_6;
+        } else if (i == 6) {
+            return class_7;
+        } else if (i == 7) {
+            return class_8;
+        } else {
+            return null;
+        }
+    }
+
+
+
 
 }
 

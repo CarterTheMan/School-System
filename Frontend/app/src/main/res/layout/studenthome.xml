@@ -39,105 +39,105 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/classInfo1"
+                android:id="@+id/studentClassInfo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 1"/>
 
             <Button
-                android:id="@+id/class1"
+                android:id="@+id/studentClass1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo2"
+                android:id="@+id/studentClassInfo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 2"/>
 
             <Button
-                android:id="@+id/class2"
+                android:id="@+id/studentClass2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo3"
+                android:id="@+id/studentClassInfo3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 3"/>
 
             <Button
-                android:id="@+id/class3"
+                android:id="@+id/studentClass3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo4"
+                android:id="@+id/studentClassInfo4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 4"/>
 
             <Button
-                android:id="@+id/class4"
+                android:id="@+id/studentClass4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo5"
+                android:id="@+id/studentClassInfo5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 5"/>
 
             <Button
-                android:id="@+id/class5"
+                android:id="@+id/studentClass5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo6"
+                android:id="@+id/studentClassInfo6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 6"/>
 
             <Button
-                android:id="@+id/class6"
+                android:id="@+id/studentClass6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo7"
+                android:id="@+id/studentClassInfo7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 7"/>
 
             <Button
-                android:id="@+id/class7"
+                android:id="@+id/studentClass7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
 
             <TextView
-                android:id="@+id/classInfo8"
+                android:id="@+id/studentClassInfo8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:text="Class info 8"/>
 
             <Button
-                android:id="@+id/class8"
+                android:id="@+id/studentClass8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Press here to see more info" />
