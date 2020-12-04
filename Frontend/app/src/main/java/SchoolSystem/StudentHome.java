@@ -23,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import SchoolSystem.R;
 
@@ -40,6 +41,16 @@ public class StudentHome extends AppCompatActivity {
     private TextView classInfo_6;
     private TextView classInfo_7;
     private TextView classInfo_8;
+
+    //Sets all of the grade info parts
+    private TextView classGrade1;
+    private TextView classGrade2;
+    private TextView classGrade3;
+    private TextView classGrade4;
+    private TextView classGrade5;
+    private TextView classGrade6;
+    private TextView classGrade7;
+    private TextView classGrade8;
 
     //Sets the buttons of all the classes
     private Button class_1;
@@ -67,6 +78,16 @@ public class StudentHome extends AppCompatActivity {
         classInfo_6 = (TextView) findViewById(R.id.studentClassInfo6);
         classInfo_7 = (TextView) findViewById(R.id.studentClassInfo7);
         classInfo_8 = (TextView) findViewById(R.id.studentClassInfo8);
+
+        //Sets all of the class grade info parts for the scroll of the page
+        classGrade1 = (TextView) findViewById(R.id.studentClassGrade1);
+        classGrade2 = (TextView) findViewById(R.id.studentClassGrade2);
+        classGrade3 = (TextView) findViewById(R.id.studentClassGrade3);
+        classGrade4 = (TextView) findViewById(R.id.studentClassGrade4);
+        classGrade5 = (TextView) findViewById(R.id.studentClassGrade5);
+        classGrade6 = (TextView) findViewById(R.id.studentClassGrade6);
+        classGrade7 = (TextView) findViewById(R.id.studentClassGrade7);
+        classGrade8 = (TextView) findViewById(R.id.studentClassGrade8);
 
         //Sets all of the class parts for the scroll of the page
         class_1 = (Button) findViewById(R.id.studentClass1);
@@ -159,11 +180,14 @@ public class StudentHome extends AppCompatActivity {
                         JSONObject course = teacherCourse.getJSONObject("course");
                         //Gets the name of the course from the course
                         String courseTitle = course.getString("title");
+                        int classID = jsonObject.getInt("id");
 
                         //Sets the text view for the class and changes the wording on it to match
                         //the title of the class
                         TextView textViewClass = getTextView(i);
                         textViewClass.setText(courseTitle);
+
+                        getGrade(classID, i);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -173,9 +197,11 @@ public class StudentHome extends AppCompatActivity {
                 //Makes all the extra buttons and text views disappear
                 for (int i = response.length(); i < 8; i++) {
                     TextView temp1 = getTextView(i);
-                    Button temp2 = getButton(i);
+                    TextView temp2 = getClassGrade(i);
+                    Button temp3 = getButton(i);
                     temp1.setVisibility(View.GONE);
                     temp2.setVisibility(View.GONE);
+                    temp3.setVisibility(View.GONE);
                 }
 
             }
@@ -188,6 +214,55 @@ public class StudentHome extends AppCompatActivity {
 
         q.add(jsonArrayRequest);
 
+    }
+
+    private void getGrade(final int classId, final int classNum) {
+        String url = "http://10.0.2.2:8080/student/" + id + "/course/" + classId + "/assignments";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                int totalGradedAssignments = 0;
+                int totalAssignmentPoints = 0;
+
+                for(int i = 0; i < response.length(); i++) {
+
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        //Gets the grade of the assignment
+                        String grade = jsonObject.optString("grade", null);
+
+                        if (grade.equals("null")) {
+
+                        } else {
+                            totalGradedAssignments = totalGradedAssignments + 1;
+                            totalAssignmentPoints = totalAssignmentPoints + Integer.parseInt(grade);
+                        }
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                TextView endGrade = getClassGrade(classNum);
+                if (totalGradedAssignments == 0) {
+                    endGrade.setText("Grade: N/A");
+                } else {
+                    double totalGrade = totalAssignmentPoints/totalGradedAssignments;
+                    endGrade.setText("Grade: " + totalGrade + "%");
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        q.add(jsonArrayRequest);
     }
 
     private void goToClass(final int classId) {
@@ -241,6 +316,28 @@ public class StudentHome extends AppCompatActivity {
             return classInfo_7;
         } else if (i == 7) {
             return classInfo_8;
+        } else {
+            return null;
+        }
+    }
+
+    private TextView getClassGrade(int i) {
+        if (i == 0) {
+            return classGrade1;
+        } else if (i == 1) {
+            return classGrade2;
+        } else if (i == 2) {
+            return classGrade3;
+        } else if (i == 3) {
+            return classGrade4;
+        } else if (i == 4) {
+            return classGrade5;
+        } else if (i == 5) {
+            return classGrade6;
+        } else if (i == 6) {
+            return classGrade7;
+        } else if (i == 7) {
+            return classGrade8;
         } else {
             return null;
         }

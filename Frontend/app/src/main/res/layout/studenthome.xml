@@ -42,12 +42,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo1"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass1"
@@ -59,12 +78,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass2"
@@ -76,12 +113,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass3"
@@ -93,12 +148,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo4"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass4"
@@ -110,12 +183,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo5"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass5"
@@ -127,12 +218,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo6"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass6"
@@ -144,12 +253,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo7"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass7"
@@ -161,12 +288,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <TextView
-                android:id="@+id/studentClassInfo8"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/studentClassInfo8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class info"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/studentClassGrade8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/studentClass8"
