@@ -52,7 +52,47 @@ public class StudentAssignment extends AppCompatActivity {
         title = findViewById(R.id.studentAssignmentTitle);
         grade = findViewById(R.id.studentClassDescription);
 
+        setUp();
 
+
+    }
+
+    private void setUp() {
+        String url = "http://10.0.2.2:8080/student/" + id + "/course/" + classId + "/assignment/" + assignmentId;
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    //Gets the general course assignment
+                    JSONObject couseAssignment = response.getJSONObject("courseAssignment");
+                    //Gets the title and grade of the assignment
+                    String title = couseAssignment.getString("title");
+                    String grade = response.optString("grade", null);
+
+                    TextView titleText = findViewById(R.id.studentAssignmentTitle);
+                    TextView gradeText = findViewById(R.id.studentAssignmentGrade);
+
+                    titleText.setText("Title: " + title);
+                    if (grade.equals("null")) {
+                        gradeText.setText("Grade: N/A");
+                    } else {
+                        gradeText.setText("Grade: " + grade + "%");
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        q.add(jsonObjectRequest);
     }
 
 }
