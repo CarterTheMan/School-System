@@ -35,6 +35,7 @@ public class StudentClass extends AppCompatActivity {
     private int classId;
 
     private TextView classTitle;
+    private TextView classDescription;
     private TextView classGrade;
     private int totalGradedAssignments;
     private int totalAssignmentPoints;
@@ -89,6 +90,7 @@ public class StudentClass extends AppCompatActivity {
 
         //Sets up the text views on the screen
         classTitle = (TextView) findViewById(R.id.studentClassTitle);
+        classDescription = (TextView) findViewById(R.id.studentClassDescription);
         classGrade = (TextView) findViewById(R.id.studentClassGrade);
 
         //Sets all of the assignment info parts
@@ -131,7 +133,7 @@ public class StudentClass extends AppCompatActivity {
         totalGradedAssignments = 0;
         totalAssignmentPoints = 0;
 
-        setUpName();
+        setUpStatics();
 
         setUpAssignments();
 
@@ -212,7 +214,7 @@ public class StudentClass extends AppCompatActivity {
 
     }
 
-    private void setUpName() {
+    private void setUpStatics() {
         String url = "http://10.0.2.2:8080/student/" + id + "/course/" + classId;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -226,8 +228,10 @@ public class StudentClass extends AppCompatActivity {
                     JSONObject course = teacherCourse.getJSONObject("course");
                     //Gets the name of the course from the course
                     String courseTitle = course.getString("title");
+                    String description = course.getString("description");
 
                     classTitle.setText("Class: " + courseTitle);
+                    classDescription.setText("Class Description: " + description);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

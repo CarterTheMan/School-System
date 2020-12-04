@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15000002" />
+        app:layout_constraintVertical_bias="0.22" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView1"
@@ -417,6 +417,19 @@
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.250000024" />
+        app:layout_constraintVertical_bias="0.30" />
+
+    <TextView
+        android:id="@+id/studentClassDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class Description Here"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
