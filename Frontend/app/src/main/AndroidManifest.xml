@@ -31,6 +31,9 @@
             android:name="StudentClass"
             android:label="Student Class"/>
         <activity
+            android:name="StudentAssignment"
+            android:label="Student Assignment"/>
+        <activity
             android:name="TeacherLogin"
             android:label="Teacher Login"/>
         <activity

@@ -308,8 +308,38 @@ public class StudentClass extends AppCompatActivity {
         q.add(jsonArrayRequest);
     }
 
-    private void goToAssignment(int i) {
+    private void goToAssignment(final int assignmentNum) {
+        String url = "http://10.0.2.2:8080/student/" + id + "/course/" + classId + "/assignments";
 
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                try {
+                    JSONObject jsonObject = response.getJSONObject(assignmentNum);
+                    //Gets the assignments id number
+                    int assignmentId = jsonObject.getInt("id");
+
+                    //Goes to that individual assignment
+                    Intent cont = new Intent(getApplicationContext(), StudentAssignment.class);
+                    cont.putExtra("id", id);
+                    cont.putExtra("classId", classId);
+                    cont.putExtra("assignmentId", assignmentId);
+                    startActivity(cont);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        q.add(jsonArrayRequest);
     }
 
     private TextView getAssignmentInfo(int i) {
