@@ -70,15 +70,27 @@ public class StudentAssignment extends AppCompatActivity {
                     //Gets the title and grade of the assignment
                     String title = couseAssignment.getString("title");
                     String grade = response.optString("grade", null);
+                    String description = couseAssignment.getString("description");
+                    String feedback = response.optString("feeback", null);
 
                     TextView titleText = findViewById(R.id.studentAssignmentTitle);
-                    TextView gradeText = findViewById(R.id.studentAssignmentGrade);
-
                     titleText.setText("Title: " + title);
+
+                    TextView gradeText = findViewById(R.id.studentAssignmentGrade);
                     if (grade.equals("null")) {
                         gradeText.setText("Grade: N/A");
                     } else {
                         gradeText.setText("Grade: " + grade + "%");
+                    }
+
+                    TextView descriptionText = findViewById(R.id.studentAssignmentDescription);
+                    descriptionText.setText("Description: " + description);
+
+                    TextView feedbackText = findViewById(R.id.studentAssignmentFeedback);
+                    if (feedback.equals("null")) {
+                        feedbackText.setText("Feedback: No feedback");
+                    } else {
+                        feedbackText.setText("Feedback: " + feedback);
                     }
 
                 } catch (JSONException e) {

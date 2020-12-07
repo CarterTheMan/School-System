@@ -6,6 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Space
+        android:id="@+id/space"
+        android:layout_width="35dp"
+        android:layout_height="26dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/studentAssignmentTitle"
         android:layout_width="wrap_content"
@@ -14,8 +21,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/space"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.100000024" />
 
@@ -27,9 +34,47 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/space"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.205" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.40000003">
+
+        <TextView
+            android:id="@+id/studentAssignmentDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assignment info"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.80000003">
+
+        <TextView
+            android:id="@+id/studentAssignmentFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assignment feedback"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
