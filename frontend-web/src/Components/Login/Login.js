@@ -1,39 +1,55 @@
 import './Login.css'
 import React from 'react'
+import ReactDOM from 'react-dom';
+import axios from 'axios'
 
 class Login extends React.Component {
 
-    // Login: http://127.0.0.1:8080/login-student       http://10.0.2.2:8080/login-student
-    // To login you have to make a JSON object that gets passed to the above link
-    // JSONObject object = new JSONObject();
-    // try {
-    //     object.put("name", u);
-    //     object.put("password", p);
-    // } catch (Exception e) {
-    //     e.printStackTrace();
-    // }
-
-    // To fix this issue, a new method for logging in may have to be made that takes the username and password as parameters
-    // ex: 127.0.0.1:8080/login-student/{username}/{password}
-
-    // Link with example: https://www.codegrepper.com/code-examples/javascript/sending+json+to+url+react
-    handleLogin2() {
-        // Simple POST request with a JSON body using fetch
-        // console.log(document.getElementById('Username').value);
-        // var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-        const requestOptions = {
-            method: 'POST',
-            mode: 'cors',    // options: 'cors', 'no-cors', 'same-origin'
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "name": document.getElementById('Username').value, "password": document.getElementById('Password').value})
-        };
-        fetch('http://127.0.0.1:8080/login-student', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data));      // This has to be changed to put the data somewhere
-        console.log("2");
-    }
-
-    handleLogin() {
+    handleLogin(type) {
+        if (type === "student") {
+            axios.post('/login-student', {
+                "name": document.getElementById('Username').value,
+                "password": document.getElementById('Password').value
+            })
+            .then(function (response) {
+                console.log(response);
+                if (response.data === "There are no students with the name " + document.getElementById('Username').value ||
+                    response.data === "Incorrect password") {
+                    ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
+                } else {
+                    // This is where it will go to the students home page
+                    // For the students home page it will have to render each class like was done with the posts in the school project
+                    // This will allow it to be dynamic in how many classes there can be.
+                    ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
+                    // ReactDOM.render(<p>{response.data}</p>, document.getElementById('root'));
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        } else if (type === "teacher") {
+            axios.post('/login-teacher', {
+                "name": document.getElementById('Username').value,
+                "password": document.getElementById('Password').value
+            })
+            .then(function (response) {
+                console.log(response);
+                if (response.data === "There are no teachers with the name " + document.getElementById('Username').value ||
+                    response.data === "Incorrect password") {
+                    ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
+                } else {
+                    // This is where it will go to the teachers home page
+                    // For the teachers home page it will have to render each class like was done with the posts in the school project
+                    // This will allow it to be dynamic in how many classes there can be.
+                    ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
+                    // ReactDOM.render(<p>{response.data}</p>, document.getElementById('root'));
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+        
 
     }
 
@@ -45,7 +61,7 @@ class Login extends React.Component {
                 <input type="text" id="Username" name="Username"></input>
                 <label for="Password">Password:</label>
                 <input type="text" id="Password" name="Password"></input>
-                <button onClick={this.handleLogin2}>Login</button>
+                <button onClick={() => this.handleLogin(this.props.userType)}>Login</button>
             </>
         )
     }

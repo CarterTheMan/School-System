@@ -4,7 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import User from './Components/User/User'
 
-ReactDOM.render(<><User /><div id="loginInfo"></div></>, document.getElementById('root'))
+ReactDOM.render(<><User />
+                  <div id="loginInfo"></div>
+                  <div id="loginMessage"></div></>, document.getElementById('root'))
 
 
 // If you want to start measuring performance in your app, pass a function
