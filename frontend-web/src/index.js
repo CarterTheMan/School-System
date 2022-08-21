@@ -7,7 +7,7 @@ import User from './Components/User/User'
 // This is the start home page
 ReactDOM.render(<><User />
                   <div id="loginInfo"></div>
-                  <div id="loginMessage"></div></>, document.getElementById('root'))
+                  <div id="loginMessage"></div></>, document.getElementById('root'));
 
 
 // If you want to start measuring performance in your app, pass a function

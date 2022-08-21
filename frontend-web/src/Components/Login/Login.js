@@ -15,14 +15,16 @@ class Login extends React.Component {
                 "password": document.getElementById('Password').value
             })
             .then(function (response) {
-                // console.log(response);
                 if (response.data === "There are no students with the name " + document.getElementById('Username').value ||
                     response.data === "Incorrect password") {
                     ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
                 } else {
-                    ReactDOM.render(<StudentHome name={document.getElementById('Username').value} id={response.data} />, document.getElementById('loginMessage'));
-                    // ReactDOM.render(<StudentHome name={document.getElementById('Username').value} id={response.data} />, document.getElementById('root'));
-
+                    // Option 1: Have the login part constantly showing
+                    // ReactDOM.render(<div id='loginSuccess'></div>, document.getElementById('loginMessage'));        // This is to refresh the message so StudentHome is remounted when student changes
+                    // ReactDOM.render(<StudentHome studentName={document.getElementById('Username').value} studentId={response.data} />, document.getElementById('loginMessage'));
+                    
+                    // Option 2: Have the login part disappear after a login (would have to add a button in the student home to go back to this point)
+                    ReactDOM.render(<StudentHome studentName={document.getElementById('Username').value} studentId={response.data} />, document.getElementById('root'));
                 }
             })
             .catch(function (error) {
@@ -34,15 +36,14 @@ class Login extends React.Component {
                 "password": document.getElementById('Password').value
             })
             .then(function (response) {
-                // console.log(response);
                 if (response.data === "There are no teachers with the name " + document.getElementById('Username').value ||
                     response.data === "Incorrect password") {
                     ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
                 } else {
-                    // This is where it will go to the teachers home page
-                    // For the teachers home page it will have to render each class like was done with the posts in the school project
-                    // This will allow it to be dynamic in how many classes there can be.
-                    // Will have to pass the data as a prop so the home screen and use it to find the classes of that user
+                    // This is where it will go to the teachers home page. There will be two options for this
+                    // Option 1: Have the login part constantly showing (will copy the format of the student homepage)
+                    // Option 2: Have the login part disappear after a login (Would have to add a button in the teacher home to go back to this point)
+
                     ReactDOM.render(<p>{response.data}</p>, document.getElementById('loginMessage'));
                     // ReactDOM.render(<p>{response.data}</p>, document.getElementById('root'));
                 }
@@ -52,21 +53,6 @@ class Login extends React.Component {
             });
         }
     }
-
-    // Example of a get method call using axios
-    // getLoggedInName() {
-    //     axios({
-    //         method: 'get',
-    //         url: "/student/1"
-    //     })
-    //     .then(function (response) {
-    //         console.log(response.data.name);
-    //         return response.data.name;
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     });
-    // }
 
     render() {
         return (

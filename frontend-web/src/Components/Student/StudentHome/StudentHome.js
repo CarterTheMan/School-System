@@ -2,48 +2,93 @@ import './StudentHome.css'
 import React from 'react'
 import axios from 'axios'
 import ReactDOM from 'react-dom'
+import StudentClass from '../StudentClass/StudentClass'
+import User from '../../User/User'
 
 class StudentHome extends React.Component {
-    // This is where it will go to the students home page
-    // For the students home page it will have to render each class like was done with the posts in the school project
-    // This will allow it to be dynamic in how many classes there can be.
-    // Will have to pass the data as a prop so the home screen and use it to find the classes of that user
+    constructor(props) {
+        super(props);
+        this.state = {
+            allClasses: null,
+        }
+    }
 
-    async getCourses() {
-        const courseUrl = '/student/' + this.props.id + '/courses';
+    // Does the get request after the component has been rendered so the reqeust has time
+    componentDidMount() {
+        const courseUrl = '/student/' + this.props.studentId + '/courses';
 
-        return await axios({
+        axios({
             method: 'get',
             url: courseUrl
         })
-        .then(function (response) {
-            console.log(response);
-            console.log(response.data);
-            return response.data;
+        .then(response => {
+            const data = response.data;
+            const allArr = [];
+            for (let i = 0; i < data.length; i++) {
+                const classInfo = {title : data[i].teacherCourse.course.title, classId : data[i].id, description : data[i].teacherCourse.course.description, name : data[i].teacherCourse.teacher.name};
+                allArr[i] = classInfo;
+            }
+            console.log('ALL before: ', allArr);
+            this.setState({allClasses : allArr});
+            console.log('ALL after: ', this.state.all);
         })
             .catch(function (error) {
             console.log(error);
         });
     }
 
-    render() {
-        // Do a get here and then map the results in the return statement
-        // {this.state.data.map(({ link, text, score }) => (
-        
-        var data = 'none';
+    // Returns the user to the login page so they no longer have access to their information
+    handleLogout() {
+        ReactDOM.render(<><User />
+                  <div id="loginInfo"></div>
+                  <div id="loginMessage"></div></>, document.getElementById('root'));
+    }
 
-        // This does the get request and sets data equal to the data that is gotten back (an array of courses)
-        (async () => {
-            data = await this.getCourses();
-            console.log("data: " + data);
-        })();
-        
-        // Need to find way for render to wait for 3 seconds or until data is not 'none' since it gets changed due to the call
+    // Loads the student class and shows the details of the class
+    goToClass(className, classDescription, classTeacher, classNumber) {
+        // Option 1 (from login page)
+        // ReactDOM.render(<StudentClass studentName={this.props.studentName} 
+        //                               studentId={this.props.studentId} 
+        //                               className={className} 
+        //                               classDescription={classDescription}
+        //                               classTeacher={classTeacher} 
+        //                               classNumber={classNumber}  />, document.getElementById('loginMessage'));
+
+        // Option 2 (from login page)
+        ReactDOM.render(<StudentClass studentName={this.props.studentName} 
+            studentId={this.props.studentId} 
+            className={className} 
+            classDescription={classDescription}
+            classTeacher={classTeacher} 
+            classNumber={classNumber}  />, document.getElementById('root'));
+    }
+
+    render() {
+
+        // Uses a ternary statement to decide to show its loading or the results of classes for the student
         return (
             <>
-                <h3>Welcome {this.props.name}!</h3>
-                <p>Here are your classes</p>
-                <p>{data}</p>
+                {this.state.allClasses === null ? 
+                <div>Loading</div>
+                :
+                <>
+                    <h2>Welcome {this.props.studentName}!</h2>
+                    <button onClick={this.handleLogout}>Logout</button>
+                    <h3>Here are your classes</h3>
+
+                    <div>
+                        {this.state.allClasses.map(allClasses => (
+                            <>
+                                <p>Class: {allClasses.title}</p>
+                                <p>Description: {allClasses.description}</p>
+                                <p>Teacher: {allClasses.name}</p>
+                                <button onClick={() => this.goToClass(allClasses.title, allClasses.description, allClasses.name, allClasses.classId)}>Click here to learn more about {allClasses.title}</button>
+                            </>
+                        ))}
+                    </div>
+                </>
+
+                }
             </> 
         )
     }
