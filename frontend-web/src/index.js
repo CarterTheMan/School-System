@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import User from './Components/User/User'
 
+// This is the start home page
 ReactDOM.render(<><User />
                   <div id="loginInfo"></div>
                   <div id="loginMessage"></div></>, document.getElementById('root'))
