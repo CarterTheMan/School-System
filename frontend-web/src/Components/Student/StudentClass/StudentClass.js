@@ -16,6 +16,7 @@ class StudentClass extends React.Component {
         ReactDOM.render(<StudentHome studentName={studentName} studentId={studentId} />, document.getElementById('root'));
     }
 
+    // Shows the basic information about the class for the student to see
     render() {
         return (
             <>

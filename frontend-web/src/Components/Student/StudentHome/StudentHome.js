@@ -63,6 +63,8 @@ class StudentHome extends React.Component {
             classNumber={classNumber}  />, document.getElementById('root'));
     }
 
+    // Says loading while the axios call loads and once that has run it shows the basic information for each class and allows the student to 
+    // click on each class to view more informations specific to that class
     render() {
 
         // Uses a ternary statement to decide to show its loading or the results of classes for the student
